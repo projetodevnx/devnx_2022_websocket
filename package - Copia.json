@@ -1,0 +1,36 @@
+{
+  "name": "layoutgonew",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/toast": "^3.3.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
+    "core-js": "^3.15.1",
+    "moment": "^2.29.1",
+    "mosha-vue-toastify": "^1.0.23",
+    "nuxt": "^2.15.7",
+    "v-mask": "^2.3.0",
+    "vue-confirm-dialog": "^1.0.2",
+    "vue-currency-filter": "^5.2.0",
+    "vue-moment": "^4.1.0",
+    "vue-paycard": "^0.6.0",
+    "vue-the-mask": "^0.11.1",
+    "vue-toast-notification": "^2.0"
+  },
+  "devDependencies": {
+    "@nuxt/types": "~2.15.0",
+    "@nuxtjs/eslint-config": "^7.0.0",
+    "eslint": "^8.1.0",
+    "moment-timezone": "^0.5.33",
+    "vue-loading-skeleton": "^1.1.9",
+    "vue-toastification": "^1.7.14"
+  }
+}
