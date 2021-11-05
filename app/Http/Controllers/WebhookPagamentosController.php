@@ -8,12 +8,13 @@ use Illuminate\Support\Facades\Event;
 
 class WebhookPagamentosController extends Controller
 {
-    public function NotificaPagamento()
+
+    public function NotificaPagamento(Request $request)
     {
-        $idUser = 1;
+        $idUser = $request->iduser;
         $mensagem = [
-            'pago' => true,
-            'mensagem' => 'Pagamento Confirmado com sucesso'
+            'pagamento' => $request->pagamento,
+            'mensagem' => $request->mensagem,
         ];
         Event::dispatch(new PagamentoConfirmado($idUser, $mensagem));
     }

@@ -35,19 +35,17 @@ class PagamentoConfirmado implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('user.' . $this->idUser);
+        return new Channel('user.' . $this->idUser);
     }
 
     public function broadcastAs()
     {
-        return 'PagamentoConfirmado';
+        return 'PagamentoGoIngressos';
     }
 
     public function broadcastWith()
     {
-        return [
-            'message' => $this->mensagem
-        ];
+            return $this->mensagem;
     }
 
 }
