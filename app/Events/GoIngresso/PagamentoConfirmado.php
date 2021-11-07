@@ -22,7 +22,7 @@ class PagamentoConfirmado implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(int $idUser, $mensagem)
+    public function __construct($idUser, $mensagem)
     {
         $this->mensagem = $mensagem;
         $this->idUser = $idUser;
@@ -35,12 +35,12 @@ class PagamentoConfirmado implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('user.' . $this->idUser);
+        return new Channel($this->idUser);
     }
 
     public function broadcastAs()
     {
-        return 'PagamentoGoIngressos';
+        return 'pagamento';
     }
 
     public function broadcastWith()

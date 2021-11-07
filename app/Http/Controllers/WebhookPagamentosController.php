@@ -14,7 +14,7 @@ class WebhookPagamentosController extends Controller
         $idUser = $request->iduser;
         $mensagem = [
             'pagamento' => $request->pagamento,
-            'mensagem' => $request->mensagem,
+            'mensagem' => $request->msg,
         ];
         Event::dispatch(new PagamentoConfirmado($idUser, $mensagem));
     }
