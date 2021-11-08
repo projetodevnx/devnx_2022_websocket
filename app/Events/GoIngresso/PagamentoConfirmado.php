@@ -26,7 +26,7 @@ class PagamentoConfirmado implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct(int $idUser, $mensagem, string $canal)
+    public function __construct(string $idUser, $mensagem, string $canal)
     {
         $this->mensagem = $mensagem;
         $this->idUser = $idUser;

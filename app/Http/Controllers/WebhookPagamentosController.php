@@ -21,5 +21,6 @@ class WebhookPagamentosController extends Controller
             $canal = 'ingressos';
         }
         Event::dispatch(new PagamentoConfirmado($idUser, $mensagem, $canal));
+        return ['sucess' => true];
     }
 }
