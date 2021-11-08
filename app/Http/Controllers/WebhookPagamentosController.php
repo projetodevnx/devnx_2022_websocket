@@ -12,10 +12,14 @@ class WebhookPagamentosController extends Controller
     public function NotificaPagamento(Request $request)
     {
         $idUser = $request->iduser;
+        $canal = 'pagamento';
         $mensagem = [
             'pagamento' => $request->pagamento,
             'mensagem' => $request->msg,
         ];
-        Event::dispatch(new PagamentoConfirmado($idUser, $mensagem));
+        if ($request->ingressos) {
+            $canal = 'ingressos';
+        }
+        Event::dispatch(new PagamentoConfirmado($idUser, $mensagem, $canal));
     }
 }

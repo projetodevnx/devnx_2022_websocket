@@ -16,16 +16,21 @@ class PagamentoConfirmado implements ShouldBroadcast
 
     public $idUser;
     public $mensagem;
+    /**
+     * @var string
+     */
+    private $canal;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($idUser, $mensagem)
+    public function __construct(int $idUser, $mensagem, string $canal)
     {
         $this->mensagem = $mensagem;
         $this->idUser = $idUser;
+        $this->canal = $canal;
     }
 
     /**
@@ -40,7 +45,7 @@ class PagamentoConfirmado implements ShouldBroadcast
 
     public function broadcastAs()
     {
-        return 'pagamento';
+        return $this->canal;
     }
 
     public function broadcastWith()
